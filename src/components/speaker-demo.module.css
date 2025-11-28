@@ -1,0 +1,16 @@
+.form {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  height: 100%;
+  min-height: 0;
+}
+
+.mic {
+  grid-row: 1;
+}
+
+.chat {
+  grid-row: 2;
+  min-height: 0;
+}

@@ -1,0 +1,113 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #464646;
+  border-radius: 8px;
+
+  label {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      transform-origin: left;
+      padding: 0 0.5rem
+    }
+
+    input {
+      width: 100%;
+      min-height: 48px;
+      border: none;
+      border-radius: 8px;
+      padding-left: 1rem;
+    }
+
+    input::placeholder {
+      color: transparent;
+    }
+  }
+
+  label:has(input:placeholder-shown):is(:hover, :focus-within),
+  label:has(input:not(:placeholder-shown)) {
+    span {
+      animation: 0.4s ease-in-out moveLabel forwards normal;
+    }
+  }
+
+  .dropzone {
+    position: relative;
+    padding: 1rem;
+    min-height: 0;
+    background-color: field;
+    border-radius: 8px;
+    transition: background-color 0.2s linear;
+  }
+
+  .dropzone div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .dropzone:hover {
+    background-color: #303030;
+    cursor: pointer;
+  }
+
+  .dropzone::after {
+    content: "";
+    transition: opacity 0.2s linear;
+    position: absolute;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    border: white 2px dashed;
+    border-radius: 8px;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .dropzone:hover::after {
+    opacity: 1;
+  }
+
+  .dropzone-hint {
+    font-size: 0.85rem;
+  }
+
+  .dropzone-extensions {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+  }
+
+  .dropzone-extensions::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: white;
+    left: 50%;
+    top: -1rem;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes moveLabel {
+  to {
+    left: 0;
+    transform: translate(-100%, -50%);
+  }
+}

@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  max-width: 769px;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  border-radius: 8px;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 0;
+
+  button {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    svg.icon {
+      transform: scale(500%, 500%);
+    }
+  }
+}
+
+.header {
+  background: #464646;
+}
