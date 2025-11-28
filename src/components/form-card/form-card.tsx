@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './form-card.module.css';
 import Select from 'react-select';
-import AzureConnectForm from './azure-connect.form';
-import SpeakerDemoForm from './speaker-demo.form';
-import useWebsocket from '../hooks/use-websocket.hook';
-import GoogleConnectForm from './google-connect.form';
+import AzureConnectForm from '../azure-connect/azure-connect.form';
+import SpeakerDemoForm from '../speaker-demo/speaker-demo.form';
+import useWebsocket from '../../hooks/use-websocket.hook';
+import GoogleConnectForm from '../google-connect/google-connect.form';
 
 export type FormCardProps = {
   onClose: () => void;

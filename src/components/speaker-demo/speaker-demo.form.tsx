@@ -1,8 +1,8 @@
 import Select from "react-select";
-import useMicrophoneDevices from "../hooks/use-microphone-devices.hook";
+import useMicrophoneDevices from "../../hooks/use-microphone-devices.hook";
 import { useEffect, useState } from "react";
 import styles from './speaker-demo.module.css';
-import ChatDisplay from "./chat-display";
+import ChatDisplay from "../chat-display/chat-display";
 
 export type SpeakerDemoFormProps = {
   isConnected: boolean,
@@ -21,7 +21,7 @@ export default function SpeakerDemoForm({ isConnected, sendMessage, listenMessag
   useEffect(() => {
     if (mic && isConnected) {
       const audioContext = new AudioContext({ sampleRate: 16000 });
-      const src = audioContext.audioWorklet.addModule("/audio.worklet.js")
+      const src = audioContext.audioWorklet.addModule("./audio.worklet.js")
         .then(() => streamFor(mic))
         .then((stream) => {
           const src = audioContext.createMediaStreamSource(stream);
