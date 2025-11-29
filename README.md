@@ -19,7 +19,7 @@ Web processes message in json format:
 {
   "id": "string",
   "type": "partial",
-  "message": "string"
+  "text": "string"
 }
 ```
 
@@ -28,6 +28,10 @@ Web processes message in json format:
 {
   "id": "string",
   "type": "final",
-  "message": "string"
+  "text": "string"
 }
 ```
+
+## Example
+
+This repo includes a submodule serving as an example for backend API implementation for this project. It can be found under example directory.
